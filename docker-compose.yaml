@@ -48,7 +48,7 @@ services:
     image: snapload-ui:latest
     restart: unless-stopped
     ports:
-      - "9012:3000"
+      - "9013:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
