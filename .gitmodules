@@ -1,0 +1,6 @@
+[submodule "snapLoad-API"]
+	path = snapLoad-API
+	url = https://github.com/pabrax/SnapLoad-API.git
+[submodule "snapLoad-UI"]
+	path = snapLoad-UI
+	url = https://github.com/pabrax/SnapLoad-UI.git
