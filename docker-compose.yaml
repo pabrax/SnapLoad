@@ -30,7 +30,7 @@ services:
       - api-meta:/app/meta
       - api-tmp:/app/tmp
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8000/api/health || exit 1"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -54,7 +54,7 @@ services:
       - PORT=3000
       - HOSTNAME=0.0.0.0
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/api/health || exit 1"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3
