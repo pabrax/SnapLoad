@@ -20,7 +20,7 @@ services:
       - RETENTION_HOURS=3
       - TEMP_RETENTION_HOURS=1
       - CLEANUP_CRON=0 * * * *
-      - TEMP_CLEANUP_CRON=0 */30 * * *
+      - TEMP_CLEANUP_CRON=0 * * * *
       - CLEANUP_DRY_RUN=false
       - ENABLE_ADMIN_ENDPOINTS=false
       - CLEANUP_LOG_LEVEL=INFO
