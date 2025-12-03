@@ -330,6 +330,17 @@ Este proyecto está bajo la licencia GPL-3.0. Ver archivos `LICENSE` en cada sub
 - [Licencia Backend](snapLoad-API/LICENSE)
 - [Licencia Frontend](snapLoad-UI/LICENSE)
 
+### Licencias de Terceros
+
+Este proyecto utiliza software de terceros que está bajo sus propias licencias:
+
+- **spotdl** (MIT License) - Herramienta para descargar audio de Spotify
+- **yt-dlp** (Unlicense) - Herramienta para descargar videos de YouTube
+
+Para más detalles sobre las licencias de las dependencias utilizadas, consulta:
+- [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) - Licencias de terceros del proyecto principal
+- [snapLoad-API/THIRD_PARTY_LICENSES.md](snapLoad-API/THIRD_PARTY_LICENSES.md) - Licencias de terceros del backend
+
 ---
 
 ## 👤 Autor
