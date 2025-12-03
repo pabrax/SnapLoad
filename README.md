@@ -32,9 +32,9 @@ docker-compose up -d
 ```
 
 **Accede a:**
-- 🎨 Frontend: http://localhost:3000
-- ⚙️ Backend API: http://localhost:8000
-- 📚 Documentación API: http://localhost:8000/docs
+- 🎨 Frontend: http://localhost:9013
+- ⚙️ Backend API: http://localhost:9020
+- 📚 Documentación API: http://localhost:9020/docs
 
 ---
 
