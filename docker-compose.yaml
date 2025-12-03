@@ -53,6 +53,7 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - HOSTNAME=0.0.0.0
+      - DOCKER_ENV=true
       - BACKEND_INTERNAL_URL=http://snapload-api:8000
       - NEXT_PUBLIC_BACKEND_URL=http://localhost:9020
     healthcheck:
