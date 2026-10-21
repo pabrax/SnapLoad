@@ -222,20 +222,25 @@ Una vez ejecutando el backend, accede a:
 ### Endpoints Principales
 
 ```bash
-# Descargar audio
-POST /download/audio
+# Descargar audio (YouTube/Spotify)
+POST /download
 {
   "url": "https://youtube.com/watch?v=...",
-  "quality": "192k"
+  "quality": "192",   // kbps (32..320) o "best"; opcional
+  "format": "mp3"     // mp3 (default), m4a, opus, ogg, flac, wav; opcional
 }
 
-# Descargar video
+# Descargar video (YouTube)
 POST /download/video
 {
   "url": "https://youtube.com/watch?v=...",
-  "quality": "1080p",
-  "format": "mp4"
+  "format": "mp4",        // webm (default), mp4, mkv, mov, avi
+  "resolution": "1080p"   // best (default), 2160p, 1440p, 1080p, 720p, 480p, 360p
 }
+
+# Consultar caché / estado
+GET /lookup?url=...&type=audio|video&quality=...&format=...&resolution=...
+GET /jobs/{job_id}
 
 # Obtener archivo descargado
 GET /files/{job_id}/{filename}
