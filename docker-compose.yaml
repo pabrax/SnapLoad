@@ -19,6 +19,7 @@ services:
       - CLEANUP_SCHEDULE_ENABLED=true
       - RETENTION_HOURS=3
       - TEMP_RETENTION_HOURS=1
+      - LIBRARY_AUTO_KEEP=true
       - CLEANUP_CRON=0 * * * *
       - TEMP_CLEANUP_CRON=0 * * * *
       - CLEANUP_DRY_RUN=false
