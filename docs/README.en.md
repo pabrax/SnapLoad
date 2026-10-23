@@ -47,6 +47,7 @@ SnapLoad is a full-stack application that allows you to download music and video
 - 🎵 **YouTube & Spotify Audio** - Download high-quality songs
 - 🎬 **YouTube Videos** - Multiple formats and resolutions
 - 📋 **Playlist Support** - Download complete playlists
+- 🎧 **Library & player** - Listen to your downloaded songs from the *Library* tab, with search, queue, shuffle, repeat, media keys and shortcuts (`space`, `n`, `p`, `m`). New songs are kept until you delete them (`LIBRARY_AUTO_KEEP`). Browser codec support varies: Opus/Ogg may not play on Safari
 - 🔄 **Smart Cache System** - Avoid duplicate downloads
 - 🧹 **Automatic Cleanup** - Automatic disk space management
 - 🐳 **Docker Ready** - Simplified deployment

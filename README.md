@@ -47,6 +47,7 @@ SnapLoad es una aplicación full-stack que permite descargar música y videos de
 - 🎵 **Audio de YouTube y Spotify** - Descarga canciones en alta calidad
 - 🎬 **Videos de YouTube** - Múltiples formatos y resoluciones
 - 📋 **Soporte de playlists** - Descarga playlists completas
+- 🎧 **Biblioteca y reproductor** - Escucha tus canciones descargadas desde la pestaña *Biblioteca*, con búsqueda, cola, aleatorio, repetición, teclas multimedia y atajos (`espacio`, `n`, `p`, `m`). Las canciones nuevas se conservan hasta que las borres (`LIBRARY_AUTO_KEEP`)
 - 🔄 **Sistema de caché inteligente** - Evita descargas duplicadas
 - 🧹 **Limpieza automática** - Gestión automática del espacio en disco
 - 🐳 **Docker ready** - Despliegue simplificado
