@@ -67,10 +67,18 @@ Scratchpad (not in repo): `...\scratchpad\snapload\` holds `before-*.png` (T0, p
 - Not run: independent `reviewer` pass (author only); light theme; Safari/Firefox.
 
 ## Progress
-8/8 tasks done (T0-T7). UI commits d665b7f, 2f130d4, a751816, d8568f5, 8a9c322, f449a8d on `feat/ui-mixtape-redesign` (snapLoad-UI); parent bump commit plus this doc on the parent branch. Nothing pushed.
+Paused by the owner after the Opus audit (CHANGES REQUESTED). Branch tip in snapLoad-UI: a43eaeb. Checks on that tree: `tsc` 23 errors, `npm test` 65 pass, `npm run build` OK (not re-run: axe, Lighthouse a11y, screenshots).
+Audit findings:
+1. Fake "Sin titulo" preview: FIXED in 928cd25 (card says "Enlace de YouTube listo" when only the platform is known; shows title/artist/cover when present). Verified by code and tsc only, no new screenshot.
+2. `/` LCP gate: HALF DONE, NOT MET. Interleaved A/B (7 runs, mobile, same session) with the 22 KB Unbounded font: base median 3.22 s (3.48 3.21 3.27 3.22 3.17 3.00 3.29), new 2.95 s (2.95 3.11 3.18 2.73 2.85 3.14 2.86); `/video` base 2.97, new 2.92. Experiment without Unbounded: 5 runs 2.28 2.54 2.44 2.06 2.15 (median 2.28), so the font costs ~0.65 s. Fix applied in a43eaeb (2 KB subset of Unbounded 800 with only the glyphs of "SnapLoad/Videos/404", rings moved to a small pseudo-element; dialog titles no longer use the display font) and it builds, but its LCP was NOT measured. Next: run `ab.sh` against base (build base with a temporary `distDir` env in next.config.mjs).
+3. Panels not in view on mobile: FIXED in e668ff2 (`scrollIntoView` block nearest, `auto` under reduced motion). Not verified in a browser.
+4. Error color too close to coral: FIXED in a43eaeb (error orange `#FF8A3D`, 6.7:1 on surface), dashed border kept. Not re-screenshotted.
+5. Inconsistent status texts: FIXED in bddc251 (button, label and subtext share `stageLabel`; stale server message removed). Not verified in a browser.
+Extra: wordmark bars no longer repeat the mode color (a43eaeb).
+Processes on 3101/9020 stopped (netstat 0 listeners).
 
 ## Next step
-Owner reviews the screenshots and the branch; push/merge only on approval. Note: the `/api/info` route returns only the platform today, so in real use the tape-label preview shows no title/artist/thumbnail (the card is ready for them).
+Rebuild, re-run axe, behav and screenshots on a43eaeb, then the interleaved Lighthouse A/B (>= 7 runs) for `/` and `/video`; if `/` median is still > 2.5 s, report numbers and what was tried. Push/merge only on owner approval.
 
 ## Log
 - L1 "puedes dentro de cada proyecto hacer una propuesta de diseño ... aprovecha las skills para hacer el plan de mejora ... crea un plan para los 3 proyectos"
