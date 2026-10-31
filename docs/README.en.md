@@ -55,6 +55,17 @@ SnapLoad is a full-stack application that allows you to download music and video
 
 ---
 
+## 🖼️ Screenshots
+
+<table>
+  <tr>
+    <td><img src="../docs/screenshots/audio.png" alt="Audio tab"></td>
+    <td><img src="../docs/screenshots/video.png" alt="Video tab"></td>
+  </tr>
+</table>
+
+<p align="center"><img src="../docs/screenshots/mobile.png" alt="Mobile view" width="260"></p>
+
 ## 🏗️ Project Structure
 
 This is a monorepo containing two independent projects as Git submodules:
@@ -168,7 +179,7 @@ uv sync
 cp .env.example .env
 
 # Run
-uv run uvicorn app.api:app --reload --host 0.0.0.0 --port 8000
+uv run uvicorn app.api:app --reload --host 0.0.0.0 --port 9020
 ```
 
 **Frontend:**
@@ -208,7 +219,7 @@ CLEANUP_LOG_LEVEL=INFO
 ### Frontend (`.env.local`)
 
 ```bash
-NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_BACKEND_URL=http://localhost:9020
 ```
 
 ---
@@ -217,8 +228,8 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 
 Once the backend is running, access:
 
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+- **Swagger UI**: http://localhost:9020/docs
+- **ReDoc**: http://localhost:9020/redoc
 
 ### Main Endpoints
 
@@ -311,8 +322,8 @@ docker-compose up -d --build
 
 ### Frontend doesn't show data
 
-1. Check `NEXT_PUBLIC_API_URL` variable in `.env.local`
-2. Verify backend responds: `curl http://localhost:8000/health`
+1. Check `NEXT_PUBLIC_BACKEND_URL` variable in `.env.local`
+2. Verify backend responds: `curl http://localhost:9020/health`
 3. Check browser console for errors
 
 ---
