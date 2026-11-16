@@ -319,7 +319,7 @@ docker-compose up -d --build
 
 1. Verifica que el backend esté corriendo: `docker-compose ps`
 2. Verifica los logs: `docker-compose logs backend`
-3. Verifica que el puerto 8000 esté libre: `lsof -i :8000`
+3. Verifica que el puerto 9020 esté libre: `lsof -i :9020`
 
 ### Frontend no muestra datos
 
